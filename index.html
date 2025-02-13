@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mil-Studio - Webflow Ecommerce</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navbar and image starts -->
+    <div class="top">
+      <div class="leftside">
+        <div class="navbar">
+          <h3>Mil.Studio</h3>
+          <h5>About us</h5>
+          <h5>Services</h5>
+          <h5>Projects</h5>
+          <div class="navbar">
+            <h5 class="nav-item">
+              Pages ▼
+              <div class="dropdown-menu">
+                <a href="#">Blogs</a>
+                <a href="#">Blog Details</a>
+                <a href="#">Pricing</a>
+                <a href="#">Pricing Details</a>
+                <a href="#">Contact</a>
+                <a href="#">Style Guide</a>
+                <a href="#">Licence</a>
+                <a href="#">Changelog</a>
+                <a href="#">404 page</a>
+                <a href="#">Password Protected</a>
+              </div>
+            </h5>
+          </div>
+        </div>
+        <h1>We’re Creative Digital Studio</h1>
+        <p>
+          Our mission is to empower brands by designing exceptional digital
+          experiences that engage users and drive growth to whether you're a
+          startup seeking digital identity.
+        </p>
+        <button>Get Started</button>
+      </div>
+      <div class="rightside">
+        <img src="./public/images/image1.jpg" alt="This is a person image" />
+
+        <div class="rightsideonimg">
+          <h4>
+            4.9 AVG. SCORE BASED <br />
+            ON 80+ REVIEW
+          </h4>
+          <hr class="thisisline" />
+          <img
+            src="https://cdn.prod.website-files.com/677114b829f082f1f5dda0f8/67739a4279988726eca96016_hero-brand.svg"
+            alt="This is a some logo"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- about us starts  -->
+
+    <div class="aboutustop">
+      <div class="leftaboutus">
+        <h1>About us</h1>
+      </div>
+      <div class="rightaboutus">
+        <h1>
+          Designing unique solutions to help brands stand out & thrive in a
+          competitive digital landscape
+        </h1>
+        <p>
+          We specialize in crafting unique solutions that help brands make their
+          mark. By combining creativity with strategy, we deliver designs that
+          stand out in the digital landscape and resonate with audiences,
+          ensuring your brand.
+        </p>
+        <div class="rightnumber">
+          <div>
+            <h1>580+</h1>
+            <h3 class="makingcolor">Satisfied Clients</h3>
+          </div>
+          <div>
+            <h1>730+</h1>
+            <h3 class="makingcolor">Projects done</h3>
+          </div>
+          <div>
+            <h1>550+M</h1>
+            <h3 class="makingcolor">Total Revenue</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- image box -->
+    <div class="imagecontainer">
+      <img
+        src="./public/images/firest.webp"
+        alt="This is the first"
+        class="first"
+      />
+      <img src="./public/images/second.webp" alt="2 image" />
+      <img src="./public/images/thrid.webp" alt="3 image" />
+      <img src="./public/images/fourth.webp" alt="4 image" />
+      <img src="./public/images/fifth.webp" alt="5 image" />
+    </div>
+
+    <!-- service provide -->
+    <div class="servicediv">
+      <h1 class="headingservice">
+        What services <br />
+        we provide?
+      </h1>
+      <div class="outerserviceprovide">
+        <div class="innerdiv">
+          <div class="imageflex">
+            <div class="blackround">
+              <img src="./public/images/logo1.svg" alt="logo" />
+            </div>
+            <img
+              src="./public/images/1.webp"
+              alt="first logo"
+              class="makesmall"
+            />
+          </div>
+          <h1>Brand Identity</h1>
+          <p>
+            Developing impactful logos and cohesive visual identities that
+            resonate with your target audience. Designing business cards,
+            brochures, and digital assets that align with your brand identity.
+          </p>
+        </div>
+
+        <!-- secondone -->
+        <div class="innerdiv">
+          <div class="imageflex">
+            <div class="blackround">
+              <img src="./public/images/logo2.svg" alt="logo" />
+            </div>
+            <img
+              src="./public/images/2.webp"
+              alt="first logo"
+              class="makesmall"
+            />
+          </div>
+          <h1>Digital Marketing</h1>
+          <p>
+            Optimizing your website and content to rank higher on search engines
+            and attract organic traffic. Designing and executing personalized
+            email campaigns to conversions.
+          </p>
+        </div>
+
+        <!-- thridone -->
+        <div class="innerdiv">
+          <div class="imageflex">
+            <div class="blackround">
+              <img src="./public/images/logo3.svg" alt="logo" />
+            </div>
+            <img
+              src="./public/images/3.webp"
+              alt="first logo"
+              class="makesmall"
+            />
+          </div>
+          <h1>Web Development</h1>
+          <p>
+            Building websites optimized for all devices, from desktop to mobile.
+            Ongoing support and updates to ensure your website remains secure,
+            fast, and up-to-date in all.
+          </p>
+        </div>
+
+        <!-- fourthone -->
+        <div class="innerdiv">
+          <div class="imageflex">
+            <div class="blackround">
+              <img src="./public/images/logo4.svg" alt="logo" />
+            </div>
+            <img
+              src="./public/images/4.jpg"
+              alt="first logo"
+              class="makesmall"
+            />
+          </div>
+          <h1>Web Design</h1>
+          <p>
+            Crafting visually stunning, user-centered websites tailored to your
+            brand and business goals. Ongoing support and updates to ensure your
+            website remains secure, fast, and up-to-date.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const servicediv = document.querySelector(".servicediv");
+    const outerserviceprovide = document.querySelector(".outerserviceprovide");
+    const innerdivs = document.querySelectorAll(".innerdiv");
+
+    let isScrollingHorizontally = false;
+    let allowHorizontalScroll = false;
+
+    // Function to check if an element is vertically centered
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            allowHorizontalScroll = true;
+          } else {
+            allowHorizontalScroll = false;
+          }
+        });
+      },
+      {
+        root: null, // Observe relative to viewport
+        threshold: 0.5, // Trigger when at least 50% of the element is in view
+      }
+    );
+
+    // Observe each .innerdiv
+    innerdivs.forEach((div) => observer.observe(div));
+
+    servicediv.addEventListener("wheel", (event) => {
+      if (!allowHorizontalScroll) return; // Allow only when an innerdiv is centered
+
+      const atStart = servicediv.scrollLeft === 0;
+      const atEnd =
+        servicediv.scrollLeft + servicediv.clientWidth >=
+        outerserviceprovide.scrollWidth;
+
+      if (atStart && event.deltaY < 0) {
+        isScrollingHorizontally = false;
+        return;
+      }
+
+      if (atEnd && event.deltaY > 0) {
+        isScrollingHorizontally = false;
+        return;
+      }
+
+      event.preventDefault();
+      isScrollingHorizontally = true;
+      servicediv.scrollBy({
+        left: event.deltaY * 2,
+        behavior: "smooth",
+      });
+    });
+
+    // Reset scrolling behavior when mouse leaves the area
+    servicediv.addEventListener("mouseleave", () => {
+      isScrollingHorizontally = false;
+    });
+  </script>
+</html>
