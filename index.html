@@ -263,6 +263,16 @@
       }
 
       serviceDiv.addEventListener("wheel", (event) => {
+        const isAtStart = serviceDiv.scrollLeft === 0;
+        const isAtEnd =
+          serviceDiv.scrollLeft + serviceDiv.clientWidth >=
+          outerServiceProvide.scrollWidth - 1;
+
+        if ((isAtStart && event.deltaY < 0) || (isAtEnd && event.deltaY > 0)) {
+          // Allow vertical scrolling
+          return;
+        }
+
         event.preventDefault();
         serviceDiv.scrollBy({
           left: event.deltaY * 8,
@@ -271,6 +281,16 @@
       });
 
       showcaseContainer.addEventListener("wheel", (event) => {
+        const isAtStart = showcaseContainer.scrollLeft === 0;
+        const isAtEnd =
+          showcaseContainer.scrollLeft + showcaseContainer.clientWidth >=
+          showcaseContainer.scrollWidth - 1;
+
+        if ((isAtStart && event.deltaY < 0) || (isAtEnd && event.deltaY > 0)) {
+          // Allow vertical scrolling
+          return;
+        }
+
         event.preventDefault();
         showcaseContainer.scrollBy({
           left: event.deltaY * 8,
