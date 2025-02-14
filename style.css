@@ -361,25 +361,40 @@ body {
 
 /* showcase of excellence////////////////////// */
 
+/* Main container styling */
 .outershowcase {
   margin-bottom: 50px;
   margin-left: 60px;
 }
 
+/* Heading styles */
 .firstheading {
   font-size: 60px;
 }
 
+/* Container that holds the images */
 .makeshowcaseimageflex {
   display: flex;
   gap: 20px;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  padding-bottom: 10px;
 }
 
+/* Hide scrollbar */
+.makeshowcaseimageflex::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual image container */
 .showcaseimgdiv {
   position: relative;
   display: inline-block;
+  flex: 0 0 auto; /* Prevents images from shrinking */
 }
 
+/* Image styling */
 .showcaseimgdiv img {
   width: 600px;
   height: 450px;
@@ -387,11 +402,12 @@ body {
   transition: opacity 0.3s ease-in-out;
 }
 
+/* Button on hover */
 .viewbuttononimage {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   padding: 10px 20px;
   border-radius: 30px;
   border: none;

@@ -202,32 +202,33 @@
       </h1>
       <div class="makeshowcaseimageflex">
         <div class="showcaseimgdiv">
-          <img src="./public/images/showcase1.jpg" alt="" />
-          <button class="viewbuttononimage">View Project -></button>
+          <img src="./public/images/showcase1.jpg" alt="Showcase 1" />
+          <button class="viewbuttononimage">View Project →</button>
         </div>
         <div class="showcaseimgdiv">
-          <img src="./public/images/showcase2.jpg" alt="" />
-          <button class="viewbuttononimage">View Project -></button>
+          <img src="./public/images/showcase2.jpg" alt="Showcase 2" />
+          <button class="viewbuttononimage">View Project →</button>
         </div>
         <div class="showcaseimgdiv">
-          <img src="./public/images/showcase3.jpg" alt="" />
-          <button class="viewbuttononimage">View Project -></button>
+          <img src="./public/images/showcase3.jpg" alt="Showcase 3" />
+          <button class="viewbuttononimage">View Project →</button>
         </div>
         <div class="showcaseimgdiv">
-          <img src="./public/images/showcase4.jpg" alt="" />
-          <button class="viewbuttononimage">View Project -></button>
+          <img src="./public/images/showcase4.jpg" alt="Showcase 4" />
+          <button class="viewbuttononimage">View Project →</button>
         </div>
         <div class="showcaseimgdiv">
-          <img src="./public/images/showcase5.jpg" alt="" />
-          <button class="viewbuttononimage">View Project -></button>
+          <img src="./public/images/showcase5.jpg" alt="Showcase 5" />
+          <button class="viewbuttononimage">View Project →</button>
         </div>
         <div class="showcaseimgdiv">
-          <img src="./public/images/showcase6.jpg" alt="" />
-          <button class="viewbuttononimage">View Project -></button>
+          <img src="./public/images/showcase6.jpg" alt="Showcase 6" />
+          <button class="viewbuttononimage">View Project →</button>
         </div>
       </div>
     </div>
   </body>
+
   <script>
     const servicediv = document.querySelector(".servicediv");
     const outerserviceprovide = document.querySelector(".outerserviceprovide");
@@ -285,6 +286,57 @@
     // Reset scrolling behavior when mouse leaves the area
     servicediv.addEventListener("mouseleave", () => {
       isScrollingHorizontally = false;
+    });
+
+    // second one
+
+    const imageContainer = document.querySelector(".makeshowcaseimageflex");
+    const imageDivs = document.querySelectorAll(".showcaseimgdiv");
+
+    let isHorizontalScrollActive = false;
+    let canScrollHorizontally = false;
+
+    // Observer to detect if a showcaseimgdiv is visible
+    const visibilityObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          canScrollHorizontally = entry.isIntersecting;
+        });
+      },
+      {
+        root: null, // Observe relative to viewport
+        threshold: 0.5, // Trigger when at least 50% of the element is visible
+      }
+    );
+
+    // Observe each showcase image div
+    imageDivs.forEach((div) => visibilityObserver.observe(div));
+
+    // Handle smooth horizontal scrolling
+    imageContainer.addEventListener("wheel", (event) => {
+      if (!canScrollHorizontally) return; // Allow only when an image is visible
+
+      const atBeginning = imageContainer.scrollLeft === 0;
+      const atEnd =
+        imageContainer.scrollLeft + imageContainer.clientWidth >=
+        imageContainer.scrollWidth;
+
+      if ((atBeginning && event.deltaY < 0) || (atEnd && event.deltaY > 0)) {
+        isHorizontalScrollActive = false;
+        return;
+      }
+
+      event.preventDefault();
+      isHorizontalScrollActive = true;
+      imageContainer.scrollBy({
+        left: event.deltaY * 2, // Adjust scrolling speed
+        behavior: "smooth",
+      });
+    });
+
+    // Reset scrolling behavior when the mouse leaves the area
+    imageContainer.addEventListener("mouseleave", () => {
+      isHorizontalScrollActive = false;
     });
   </script>
 </html>
