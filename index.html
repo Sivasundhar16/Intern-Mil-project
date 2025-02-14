@@ -230,93 +230,71 @@
   </body>
 
   <script>
+    // make cahnge
     document.addEventListener("DOMContentLoaded", () => {
-      const servicediv = document.querySelector(".servicediv");
-      const outerserviceprovide = document.querySelector(
+      const serviceDiv = document.querySelector(".servicediv");
+      const outerServiceProvide = document.querySelector(
         ".outerserviceprovide"
       );
-      const innerdivs = document.querySelectorAll(".innerdiv");
-
-      let allowHorizontalScroll = false;
-
-      // Observer to check if an element is fully visible
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.intersectionRatio === 1) {
-              allowHorizontalScroll = true;
-            } else {
-              allowHorizontalScroll = false;
-            }
-          });
-        },
-        {
-          root: null, // Relative to viewport
-          threshold: 1.0, // Only allow when fully visible
-        }
+      const showcaseContainer = document.querySelector(
+        ".makeshowcaseimageflex"
+      );
+      const lastServiceItem = document.querySelector(".innerdiv:last-child");
+      const lastShowcaseItem = document.querySelector(
+        ".showcaseimgdiv:last-child"
       );
 
-      // Observe each .innerdiv
-      innerdivs.forEach((div) => observer.observe(div));
-
-      servicediv.addEventListener("wheel", (event) => {
-        if (!allowHorizontalScroll) return; // Allow scrolling only when fully seen
-
-        const atStart = servicediv.scrollLeft === 0;
-        const atEnd =
-          servicediv.scrollLeft + servicediv.clientWidth >=
-          outerserviceprovide.scrollWidth - 1; // Ensure complete visibility
-
-        if ((atStart && event.deltaY < 0) || (atEnd && event.deltaY > 0)) {
-          return;
+      // Function to ensure the last element is fully visible
+      function ensureLastElementVisible() {
+        if (lastServiceItem) {
+          lastServiceItem.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "end",
+          });
         }
+        if (lastShowcaseItem) {
+          lastShowcaseItem.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "end",
+          });
+        }
+      }
 
+      serviceDiv.addEventListener("wheel", (event) => {
         event.preventDefault();
-        servicediv.scrollBy({
+        serviceDiv.scrollBy({
           left: event.deltaY * 2,
           behavior: "smooth",
         });
       });
 
-      // Second section (image showcase scrolling)
-      const imageContainer = document.querySelector(".makeshowcaseimageflex");
-      const imageDivs = document.querySelectorAll(".showcaseimgdiv");
-
-      let canScrollHorizontally = false;
-
-      // Observer to detect if a showcase image div is fully visible
-      const visibilityObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            canScrollHorizontally = entry.intersectionRatio === 1;
-          });
-        },
-        {
-          root: null,
-          threshold: 1.0, // Allow only when fully visible
-        }
-      );
-
-      // Observe each showcase image div
-      imageDivs.forEach((div) => visibilityObserver.observe(div));
-
-      imageContainer.addEventListener("wheel", (event) => {
-        if (!canScrollHorizontally) return; // Allow scrolling only when fully seen
-
-        const atBeginning = imageContainer.scrollLeft === 0;
-        const atEnd =
-          imageContainer.scrollLeft + imageContainer.clientWidth >=
-          imageContainer.scrollWidth - 1; // Ensure complete visibility
-
-        if ((atBeginning && event.deltaY < 0) || (atEnd && event.deltaY > 0)) {
-          return;
-        }
-
+      showcaseContainer.addEventListener("wheel", (event) => {
         event.preventDefault();
-        imageContainer.scrollBy({
+        showcaseContainer.scrollBy({
           left: event.deltaY * 2,
           behavior: "smooth",
         });
+      });
+
+      // Ensure last element is visible when user scrolls to the right
+      serviceDiv.addEventListener("scroll", () => {
+        if (
+          serviceDiv.scrollLeft + serviceDiv.clientWidth >=
+          outerServiceProvide.scrollWidth - 1
+        ) {
+          ensureLastElementVisible();
+        }
+      });
+
+      showcaseContainer.addEventListener("scroll", () => {
+        if (
+          showcaseContainer.scrollLeft + showcaseContainer.clientWidth >=
+          showcaseContainer.scrollWidth - 1
+        ) {
+          ensureLastElementVisible();
+        }
       });
     });
   </script>
