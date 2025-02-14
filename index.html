@@ -230,113 +230,94 @@
   </body>
 
   <script>
-    const servicediv = document.querySelector(".servicediv");
-    const outerserviceprovide = document.querySelector(".outerserviceprovide");
-    const innerdivs = document.querySelectorAll(".innerdiv");
+    document.addEventListener("DOMContentLoaded", () => {
+      const servicediv = document.querySelector(".servicediv");
+      const outerserviceprovide = document.querySelector(
+        ".outerserviceprovide"
+      );
+      const innerdivs = document.querySelectorAll(".innerdiv");
 
-    let isScrollingHorizontally = false;
-    let allowHorizontalScroll = false;
+      let allowHorizontalScroll = false;
 
-    // Function to check if an element is vertically centered
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            allowHorizontalScroll = true;
-          } else {
-            allowHorizontalScroll = false;
-          }
+      // Observer to check if an element is fully visible
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.intersectionRatio === 1) {
+              allowHorizontalScroll = true;
+            } else {
+              allowHorizontalScroll = false;
+            }
+          });
+        },
+        {
+          root: null, // Relative to viewport
+          threshold: 1.0, // Only allow when fully visible
+        }
+      );
+
+      // Observe each .innerdiv
+      innerdivs.forEach((div) => observer.observe(div));
+
+      servicediv.addEventListener("wheel", (event) => {
+        if (!allowHorizontalScroll) return; // Allow scrolling only when fully seen
+
+        const atStart = servicediv.scrollLeft === 0;
+        const atEnd =
+          servicediv.scrollLeft + servicediv.clientWidth >=
+          outerserviceprovide.scrollWidth - 1; // Ensure complete visibility
+
+        if ((atStart && event.deltaY < 0) || (atEnd && event.deltaY > 0)) {
+          return;
+        }
+
+        event.preventDefault();
+        servicediv.scrollBy({
+          left: event.deltaY * 2,
+          behavior: "smooth",
         });
-      },
-      {
-        root: null, // Observe relative to viewport
-        threshold: 0.5, // Trigger when at least 50% of the element is in view
-      }
-    );
-
-    // Observe each .innerdiv
-    innerdivs.forEach((div) => observer.observe(div));
-
-    servicediv.addEventListener("wheel", (event) => {
-      if (!allowHorizontalScroll) return; // Allow only when an innerdiv is centered
-
-      const atStart = servicediv.scrollLeft === 0;
-      const atEnd =
-        servicediv.scrollLeft + servicediv.clientWidth >=
-        outerserviceprovide.scrollWidth;
-
-      if (atStart && event.deltaY < 0) {
-        isScrollingHorizontally = false;
-        return;
-      }
-
-      if (atEnd && event.deltaY > 0) {
-        isScrollingHorizontally = false;
-        return;
-      }
-
-      event.preventDefault();
-      isScrollingHorizontally = true;
-      servicediv.scrollBy({
-        left: event.deltaY * 2,
-        behavior: "smooth",
       });
-    });
 
-    // Reset scrolling behavior when mouse leaves the area
-    servicediv.addEventListener("mouseleave", () => {
-      isScrollingHorizontally = false;
-    });
+      // Second section (image showcase scrolling)
+      const imageContainer = document.querySelector(".makeshowcaseimageflex");
+      const imageDivs = document.querySelectorAll(".showcaseimgdiv");
 
-    // second one
+      let canScrollHorizontally = false;
 
-    const imageContainer = document.querySelector(".makeshowcaseimageflex");
-    const imageDivs = document.querySelectorAll(".showcaseimgdiv");
+      // Observer to detect if a showcase image div is fully visible
+      const visibilityObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            canScrollHorizontally = entry.intersectionRatio === 1;
+          });
+        },
+        {
+          root: null,
+          threshold: 1.0, // Allow only when fully visible
+        }
+      );
 
-    let isHorizontalScrollActive = false;
-    let canScrollHorizontally = false;
+      // Observe each showcase image div
+      imageDivs.forEach((div) => visibilityObserver.observe(div));
 
-    // Observer to detect if a showcaseimgdiv is visible
-    const visibilityObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          canScrollHorizontally = entry.isIntersecting;
+      imageContainer.addEventListener("wheel", (event) => {
+        if (!canScrollHorizontally) return; // Allow scrolling only when fully seen
+
+        const atBeginning = imageContainer.scrollLeft === 0;
+        const atEnd =
+          imageContainer.scrollLeft + imageContainer.clientWidth >=
+          imageContainer.scrollWidth - 1; // Ensure complete visibility
+
+        if ((atBeginning && event.deltaY < 0) || (atEnd && event.deltaY > 0)) {
+          return;
+        }
+
+        event.preventDefault();
+        imageContainer.scrollBy({
+          left: event.deltaY * 2,
+          behavior: "smooth",
         });
-      },
-      {
-        root: null, // Observe relative to viewport
-        threshold: 0.5, // Trigger when at least 50% of the element is visible
-      }
-    );
-
-    // Observe each showcase image div
-    imageDivs.forEach((div) => visibilityObserver.observe(div));
-
-    // Handle smooth horizontal scrolling
-    imageContainer.addEventListener("wheel", (event) => {
-      if (!canScrollHorizontally) return; // Allow only when an image is visible
-
-      const atBeginning = imageContainer.scrollLeft === 0;
-      const atEnd =
-        imageContainer.scrollLeft + imageContainer.clientWidth >=
-        imageContainer.scrollWidth;
-
-      if ((atBeginning && event.deltaY < 0) || (atEnd && event.deltaY > 0)) {
-        isHorizontalScrollActive = false;
-        return;
-      }
-
-      event.preventDefault();
-      isHorizontalScrollActive = true;
-      imageContainer.scrollBy({
-        left: event.deltaY * 2, // Adjust scrolling speed
-        behavior: "smooth",
       });
-    });
-
-    // Reset scrolling behavior when the mouse leaves the area
-    imageContainer.addEventListener("mouseleave", () => {
-      isHorizontalScrollActive = false;
     });
   </script>
 </html>
