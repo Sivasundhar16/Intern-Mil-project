@@ -29,6 +29,10 @@ body {
   z-index: 10;
 }
 
+.makepointer {
+  cursor: pointer;
+}
+
 .rightside {
   position: relative;
 }
@@ -353,4 +357,50 @@ body {
   margin-left: 60px;
   color: #5c5151;
   margin-right: 10px;
+}
+
+/* showcase of excellence////////////////////// */
+
+.outershowcase {
+  margin-bottom: 50px;
+  margin-left: 60px;
+}
+
+.firstheading {
+  font-size: 60px;
+}
+
+.makeshowcaseimageflex {
+  display: flex;
+  gap: 20px;
+}
+
+.showcaseimgdiv {
+  position: relative;
+  display: inline-block;
+}
+
+.showcaseimgdiv img {
+  width: 600px;
+  height: 450px;
+  border-radius: 20px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.viewbuttononimage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: whitesmoke;
+  color: black;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.showcaseimgdiv:hover .viewbuttononimage {
+  opacity: 1;
 }
