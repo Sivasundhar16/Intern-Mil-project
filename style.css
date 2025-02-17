@@ -420,3 +420,89 @@ body {
 .showcaseimgdiv:hover .viewbuttononimage {
   opacity: 1;
 }
+
+/* why choose us /////////////////////////////////*/
+
+.chooseusheading {
+  font-size: 50px;
+  font-weight: 400;
+  margin-left: 55px;
+  margin-top: 50px;
+}
+
+/* new change */
+
+.outerchooseus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.outerchooseus::-webkit-scrollbar {
+  display: none;
+}
+
+.seperaterchoose {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1140px;
+  min-height: 438px;
+  margin: 20px auto;
+  border: 1px solid #e2e2e2;
+  border-radius: 20px;
+  background-color: white;
+  position: sticky;
+  top: 20px;
+  margin-bottom: 20vh; /* Reduced from 40vh to 20vh */
+}
+
+.seperaterchoose:nth-child(1) {
+  z-index: 1;
+}
+.seperaterchoose:nth-child(2) {
+  z-index: 2;
+}
+.seperaterchoose:nth-child(3) {
+  z-index: 3;
+}
+.seperaterchoose:nth-child(4) {
+  z-index: 4;
+}
+
+.chooseusleft {
+  width: 50%;
+  padding-left: 40px;
+}
+
+.chooseusleft h3 {
+  font-size: 35px;
+  width: 350px;
+  margin-left: 30px;
+}
+
+.chooseusleft p {
+  color: #555;
+  width: 350px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.chooseusright {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.chooseusright img {
+  width: 500px;
+  height: 396px;
+  border-radius: 25px;
+  object-fit: cover;
+}

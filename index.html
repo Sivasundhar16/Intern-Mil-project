@@ -233,6 +233,66 @@
         </div>
       </div>
     </div>
+
+    <!-- why choose us -->
+
+    <h1 class="chooseusheading">Why choose us ?</h1>
+
+    <div class="outerchooseus">
+      <div class="seperaterchoose">
+        <div class="chooseusleft">
+          <h3>Extensive Expertise Across Industries</h3>
+          <p>
+            With a wealth of experience across multiple industries, we
+            understand the unique challenges and opportunities each sector
+            presents. From e-commerce to technology, healthcare.
+          </p>
+        </div>
+        <div class="chooseusright">
+          <img src="./public/images/chooseus1.webp" alt="Expertise" />
+        </div>
+      </div>
+      <div class="seperaterchoose">
+        <div class="chooseusleft">
+          <h3>Reliable Dedicated Support System</h3>
+          <p>
+            Our commitment to your success doesn’t end after the project is
+            completed. We offer continuous support and optimization to ensure
+            your digital platforms remain effective and up-to-date.
+          </p>
+        </div>
+        <div class="chooseusright">
+          <img src="./public/images/chooseus2.webp" alt="Support" />
+        </div>
+      </div>
+      <div class="seperaterchoose">
+        <div class="chooseusleft">
+          <h3>Collaborative and Open Partnership</h3>
+          <p>
+            We value the importance of open communication and a collaborative
+            relationship. Throughout the entire process, from brainstorming and
+            strategy development to execution and refinement.
+          </p>
+        </div>
+        <div class="chooseusright">
+          <img src="./public/images/chooseus3.webp" alt="Collaboration" />
+        </div>
+      </div>
+      <div class="seperaterchoose">
+        <div class="chooseusleft">
+          <h3>Innovative and Forward-Thinking</h3>
+          <p>
+            We focus on delivering strategies that are not only creative but
+            also effective, ensuring your goals are met with measurable
+            outcomes. Whether it’s driving more website traffic, increasing
+            conversions.
+          </p>
+        </div>
+        <div class="chooseusright">
+          <img src="./public/images/chooseus4.jpg" alt="Innovation" />
+        </div>
+      </div>
+    </div>
   </body>
 
   <script>
@@ -323,5 +383,39 @@
         }
       });
     });
+
+    // stacked card
+    // document.addEventListener("DOMContentLoaded", () => {
+    //   const cards = document.querySelectorAll(".seperaterchoose");
+    //   const container = document.querySelector(".outerchooseus");
+
+    //   if (!cards || !container) {
+    //     console.error(
+    //       "Could not find necessary DOM elements for stacked card effect"
+    //     );
+    //   } else {
+    //     container.addEventListener("scroll", () => {
+    //       const containerRect = container.getBoundingClientRect();
+
+    //       cards.forEach((card, index) => {
+    //         const cardRect = card.getBoundingClientRect();
+    //         const offset = cardRect.top - containerRect.top;
+    //         const depth = cards.length - index - 1;
+
+    //         if (offset > 0) {
+    //           card.style.transform = `translateY(${
+    //             offset * 0.5
+    //           }px) translateZ(${depth * -20}px)`;
+    //         } else {
+    //           card.style.transform = `translateY(0) translateZ(${
+    //             depth * -20
+    //           }px)`;
+    //         }
+    //         card.style.opacity = Math.min(1, 1 - offset / 300);
+    //         console.log(`Card ${index} offset: ${offset}, depth: ${depth}`);
+    //       });
+    //     });
+    //   }
+    // });
   </script>
 </html>
