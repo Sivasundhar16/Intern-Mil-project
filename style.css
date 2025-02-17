@@ -430,17 +430,15 @@ body {
   margin-top: 50px;
 }
 
-/* new change */
-
 .outerchooseus {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-  height: 100vh;
-  overflow-y: scroll;
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  /* Remove height: 100vh to allow natural content flow */
+  /* Keep the scrollbar settings */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .outerchooseus::-webkit-scrollbar {
@@ -458,22 +456,15 @@ body {
   border: 1px solid #e2e2e2;
   border-radius: 20px;
   background-color: white;
-  position: sticky;
-  top: 20px;
-  margin-bottom: 20vh; /* Reduced from 40vh to 20vh */
+  /* Modify sticky behavior */
+  position: relative; /* Change to relative by default */
+  margin-bottom: 40px; /* Reduce margin to allow content to flow */
 }
 
-.seperaterchoose:nth-child(1) {
-  z-index: 1;
-}
-.seperaterchoose:nth-child(2) {
-  z-index: 2;
-}
-.seperaterchoose:nth-child(3) {
-  z-index: 3;
-}
-.seperaterchoose:nth-child(4) {
-  z-index: 4;
+/* Add intersection observer trigger points */
+.seperaterchoose.sticky {
+  position: sticky;
+  top: 20px;
 }
 
 .chooseusleft {
@@ -505,4 +496,13 @@ body {
   height: 396px;
   border-radius: 25px;
   object-fit: cover;
+}
+
+.clientloveheading h1 {
+  margin-left: 30px;
+}
+/* client love/////////////////////// */
+
+.clientloveheading h1 {
+  margin-left: 30px;
 }

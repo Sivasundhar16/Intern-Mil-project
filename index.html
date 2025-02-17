@@ -293,6 +293,11 @@
         </div>
       </div>
     </div>
+
+    <!-- client love us -->
+    <div class="clientloveheading">
+      <h1>Why our clients love us?</h1>
+    </div>
   </body>
 
   <script>
@@ -385,37 +390,26 @@
     });
 
     // stacked card
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   const cards = document.querySelectorAll(".seperaterchoose");
-    //   const container = document.querySelector(".outerchooseus");
+    // Create an Intersection Observer to handle sticky behavior
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
 
-    //   if (!cards || !container) {
-    //     console.error(
-    //       "Could not find necessary DOM elements for stacked card effect"
-    //     );
-    //   } else {
-    //     container.addEventListener("scroll", () => {
-    //       const containerRect = container.getBoundingClientRect();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("sticky");
+        } else {
+          entry.target.classList.remove("sticky");
+        }
+      });
+    }, observerOptions);
 
-    //       cards.forEach((card, index) => {
-    //         const cardRect = card.getBoundingClientRect();
-    //         const offset = cardRect.top - containerRect.top;
-    //         const depth = cards.length - index - 1;
-
-    //         if (offset > 0) {
-    //           card.style.transform = `translateY(${
-    //             offset * 0.5
-    //           }px) translateZ(${depth * -20}px)`;
-    //         } else {
-    //           card.style.transform = `translateY(0) translateZ(${
-    //             depth * -20
-    //           }px)`;
-    //         }
-    //         card.style.opacity = Math.min(1, 1 - offset / 300);
-    //         console.log(`Card ${index} offset: ${offset}, depth: ${depth}`);
-    //       });
-    //     });
-    //   }
-    // });
+    // Observe all separator sections
+    document.querySelectorAll(".seperaterchoose").forEach((section) => {
+      observer.observe(section);
+    });
   </script>
 </html>
