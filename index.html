@@ -581,9 +581,10 @@
       let offset = 0;
       const scrollSpeed = 150;
 
-      // Set overflow behavior
+      // Set overflow behavior and ensure snap points
       container.style.overflowX = "auto"; // Allow horizontal scrolling
       container.style.scrollSnapType = "x mandatory"; // Ensure each item snaps
+      container.style.scrollBehavior = "smooth"; // Smooth scrolling
 
       // Listen to wheel event to trigger horizontal scroll
       window.addEventListener("wheel", (event) => {
@@ -605,11 +606,16 @@
           }
         }
 
-        // Apply the offset
+        // Apply the offset to scroll the container
         container.scrollTo({
           left: offset,
           behavior: "smooth", // Smooth scroll transition
         });
+      });
+
+      // Make sure the first item is fully visible on page load
+      window.addEventListener("load", () => {
+        container.scrollLeft = 0; // Reset to the first item
       });
     });
   </script>
