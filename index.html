@@ -573,49 +573,74 @@
     // love us ///////////////////////////
 
     document.addEventListener("DOMContentLoaded", () => {
-      const clientLoveHeadings =
-        document.querySelectorAll(".clientloveheading");
-      const container = document.querySelector(".makeclientloveusscroall");
-      const containerWidth = container.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      let offset = 0;
-      const scrollSpeed = 150;
+      const testimonialContainer = document.querySelector(
+        ".makeclientloveusscroall"
+      );
+      // Increased base scroll speed substantially
+      const scrollSpeed = 100; // You can increase this number for even faster scrolling
 
-      // Set overflow behavior and ensure snap points
-      container.style.overflowX = "auto"; // Allow horizontal scrolling
-      container.style.scrollSnapType = "x mandatory"; // Ensure each item snaps
-      container.style.scrollBehavior = "smooth"; // Smooth scrolling
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        return (
+          rect.top <= (windowHeight * 2) / 3 && rect.bottom >= windowHeight / 3
+        );
+      }
 
-      // Listen to wheel event to trigger horizontal scroll
-      window.addEventListener("wheel", (event) => {
-        // Prevent default vertical scroll
+      function handleWheel(event) {
+        if (!isInViewport(testimonialContainer)) return;
+
         event.preventDefault();
 
-        const maxScroll = containerWidth - viewportWidth;
+        const isAtStart = testimonialContainer.scrollLeft === 0;
+        const isAtEnd =
+          testimonialContainer.scrollLeft + testimonialContainer.clientWidth >=
+          testimonialContainer.scrollWidth - 1;
 
-        // Determine if we're scrolling up or down
-        if (event.deltaY > 0) {
-          // Scroll down - move to the next item (right)
-          if (offset < maxScroll) {
-            offset += scrollSpeed;
-          }
-        } else {
-          // Scroll up - move to the previous item (left)
-          if (offset > 0) {
-            offset -= scrollSpeed;
-          }
+        if ((isAtStart && event.deltaY < 0) || (isAtEnd && event.deltaY > 0)) {
+          window.scrollBy({
+            top: event.deltaY,
+            behavior: "smooth",
+          });
+          return;
         }
 
-        // Apply the offset to scroll the container
-        container.scrollTo({
-          left: offset,
-          behavior: "smooth", // Smooth scroll transition
+        // ⭐ MAIN SPEED CONTROL - Increase this multiplier for faster scrolling
+        const scrollAmount = event.deltaY * 3; // Increased from 3 to 8
+
+        testimonialContainer.scrollBy({
+          left: scrollAmount,
+          // ⭐ SPEED CONTROL - Change behavior to 'auto' for instant scrolling
+          behavior: "auto", // Changed from 'smooth' to 'auto' for faster response
         });
+      }
+
+      testimonialContainer.addEventListener("wheel", handleWheel, {
+        passive: false,
       });
 
-      // Make sure the first item is fully visible on page load
-      window.addEventListener("load", () => {
-        container.scrollLeft = 0; // Reset to the first item
+      // Touch support with increased speed
+      let touchStart = null;
+      let touchX = null;
+
+      testimonialContainer.addEventListener("touchstart", (e) => {
+        touchStart = e.touches[0].clientX;
+        touchX = testimonialContainer.scrollLeft;
+      });
+
+      testimonialContainer.addEventListener("touchmove", (e) => {
+        if (!touchStart || !touchX) return;
+
+        // ⭐ TOUCH SPEED CONTROL - Increased multiplier for faster touch scrolling
+        const touchDelta = (touchStart - e.touches[0].clientX) * 3; // Increased multiplier
+        testimonialContainer.scrollLeft = touchX + touchDelta;
+
+        e.preventDefault();
+      });
+
+      testimonialContainer.addEventListener("touchend", () => {
+        touchStart = null;
+        touchX = null;
       });
     });
   </script>
