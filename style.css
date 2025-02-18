@@ -510,14 +510,21 @@ body {
 .clientloveheading {
   width: 640px;
   height: 445px;
-  background-color: aquamarine;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  border: 1px solid #e2e2e2;
+  /* margin-left: 90px; */
+  background-color: whitesmoke;
 }
 
 .innerloveusdiv {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .faceicon {
@@ -527,24 +534,57 @@ body {
 
 .faceicondiv {
   display: flex;
+  margin-left: 40px;
+  gap: 10px;
 }
 
 .makesameline {
-  background-color: brown;
   margin: auto;
 }
 
 .makesameline p {
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
+  margin: 0;
+  padding: 0;
 }
 
 .makesameline p {
-  margin: 0 0 0 0; /* 5px bottom margin */
+  margin: 0 0 0 0;
   padding: 0;
 }
 
 .clientloveheadingtwo {
-  width: 502px;
+  width: 550px;
   height: 80px;
+  font-size: 40px;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.firstclientloveheading {
+  font-size: 80px;
+  font-weight: 500;
+  width: 700px;
+  margin-left: 100px;
+}
+
+.thisisloveuspara {
+  width: 540px;
+  height: 96px;
+  margin-left: 40px;
+  color: #413939;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.leftsidesvgloveclient {
+  margin-right: 60px;
+}
+.makeclientloveusscroall {
+  display: flex;
+  gap: 20px;
+  margin-left: 90px;
+}
+.makingloveusheadingbig {
+  font-size: 22px;
+  font-weight: bold;
 }
