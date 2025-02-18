@@ -506,3 +506,45 @@ body {
 .clientloveheading h1 {
   margin-left: 30px;
 }
+
+.clientloveheading {
+  width: 640px;
+  height: 445px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+}
+
+.innerloveusdiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.faceicon {
+  height: 60px;
+  width: 60px;
+}
+
+.faceicondiv {
+  display: flex;
+}
+
+.makesameline {
+  background-color: brown;
+  margin: auto;
+}
+
+.makesameline p {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+.makesameline p {
+  margin: 0 0 0 0; /* 5px bottom margin */
+  padding: 0;
+}
+
+.clientloveheadingtwo {
+  width: 502px;
+  height: 80px;
+}
