@@ -569,5 +569,48 @@
     document.querySelectorAll(".seperaterchoose").forEach((section) => {
       observer.observe(section);
     });
+
+    // love us ///////////////////////////
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const clientLoveHeadings =
+        document.querySelectorAll(".clientloveheading");
+      const container = document.querySelector(".makeclientloveusscroall");
+      const containerWidth = container.scrollWidth;
+      const viewportWidth = window.innerWidth;
+      let offset = 0;
+      const scrollSpeed = 150;
+
+      // Set overflow behavior
+      container.style.overflowX = "auto"; // Allow horizontal scrolling
+      container.style.scrollSnapType = "x mandatory"; // Ensure each item snaps
+
+      // Listen to wheel event to trigger horizontal scroll
+      window.addEventListener("wheel", (event) => {
+        // Prevent default vertical scroll
+        event.preventDefault();
+
+        const maxScroll = containerWidth - viewportWidth;
+
+        // Determine if we're scrolling up or down
+        if (event.deltaY > 0) {
+          // Scroll down - move to the next item (right)
+          if (offset < maxScroll) {
+            offset += scrollSpeed;
+          }
+        } else {
+          // Scroll up - move to the previous item (left)
+          if (offset > 0) {
+            offset -= scrollSpeed;
+          }
+        }
+
+        // Apply the offset
+        container.scrollTo({
+          left: offset,
+          behavior: "smooth", // Smooth scroll transition
+        });
+      });
+    });
   </script>
 </html>
