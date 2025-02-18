@@ -674,12 +674,19 @@ body {
   width: 265px;
   height: 42px;
   border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: white;
+  color: black;
+  font-weight: bold;
 }
 
 .getstartedbutton:hover {
   background-color: black;
   color: white;
+  /* The transition property in the main class will handle the smooth effect */
 }
+
 .seperateone {
   display: flex;
   flex-direction: column;
