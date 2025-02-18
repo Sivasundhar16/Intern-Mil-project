@@ -732,3 +732,51 @@ body {
   margin-top: 110px;
   margin-bottom: 20px;
 }
+
+/* unique soluction //////////////// */
+.uniquesoluctionflex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1060px;
+  height: 162px;
+  margin: auto;
+  border: 1px solid #e2e2e2;
+  border-radius: 20px;
+  margin-bottom: 250px;
+}
+
+.uniquesoluctionblock {
+  display: flex;
+  gap: 20px;
+  margin-right: 20px;
+}
+
+.uniquesoluctionone h1 {
+  margin-left: 50px;
+}
+
+.uniquesoluctionblock button {
+  width: 160px;
+  height: 58px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.uniquewhitebutton:hover {
+  background-color: black;
+  color: white;
+  transition: all 0.5s ease-in;
+}
+
+.uniqueblackbutton {
+  background-color: black;
+  color: white;
+}
+
+.uniqueblackbutton:hover {
+  background-color: #000000a4;
+  transition: all 0.5s ease-in;
+}
