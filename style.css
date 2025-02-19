@@ -743,7 +743,7 @@ body {
   margin: auto;
   border: 1px solid #e2e2e2;
   border-radius: 20px;
-  margin-bottom: 250px;
+  margin-bottom: 150px;
 }
 
 .uniquesoluctionblock {
@@ -779,4 +779,69 @@ body {
 .uniqueblackbutton:hover {
   background-color: #000000a4;
   transition: all 0.5s ease-in;
+}
+
+/* frequently asked///////////////// questions */
+
+/* Main container */
+.frequentlyaskedflex {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 80px;
+  padding: 20px;
+}
+
+/* Left section */
+.leftsidefrequently {
+  width: 360px;
+}
+
+.leftsidefrequently h1 {
+  font-size: 40px;
+}
+
+/* Right section */
+.rightsidefrequently {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  gap: 10px; /* Reduced gap */
+}
+
+/* FAQ Box */
+.boxouters {
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Question + Icon */
+.makingflexicons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+
+/* Cursor effect on Plus/Minus */
+.makingpluscursor {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Paragraph (Initially Hidden) */
+.answer {
+  max-height: 0;
+  color: #5c5151;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-in;
+}
+
+/* When answer is visible */
+.answer.show {
+  max-height: 200px; /* Adjust based on content */
+  opacity: 1;
+  padding-top: 8px;
 }

@@ -720,6 +720,87 @@
         <button class="uniqueblackbutton">Book a Call -></button>
       </div>
     </div>
+
+    <!--== Frequently Asked Question -->
+    <div class="frequentlyaskedflex">
+      <div class="leftsidefrequently">
+        <h1>Frequently Asked Questions</h1>
+      </div>
+      <div class="rightsidefrequently">
+        <div class="boxouters">
+          <div class="makingflexicons">
+            <h3>How do I contact you for inquiries or collaborations?</h3>
+            <h5 class="makingpluscursor">➕</h5>
+          </div>
+          <div class="answer">
+            <p>
+              Best the average blind and that accordingly pointing, out the to
+              bold, good my believed the rattling experiments friends couldn't
+              scolded unable to many line may their times, propitiously is
+              themselves, was discipline the be the seen escape.
+            </p>
+          </div>
+        </div>
+
+        <div class="boxouters">
+          <div class="makingflexicons">
+            <h3>What services does your digital agency offer?</h3>
+            <h5 class="makingpluscursor">➕</h5>
+          </div>
+          <div class="answer">
+            <p>
+              Best the average blind and that accordingly pointing, out the to
+              bold, good my believed the rattling experiments friends couldn't
+              scolded unable to many line may their times, propitiously is
+              themselves, was discipline the be the seen escape.
+            </p>
+          </div>
+        </div>
+
+        <div class="boxouters">
+          <div class="makingflexicons">
+            <h3>How long does it take to build a website?</h3>
+            <h5 class="makingpluscursor">➕</h5>
+          </div>
+          <div class="answer">
+            <p>
+              Best the average blind and that accordingly pointing, out the to
+              bold, good my believed the rattling experiments friends couldn't
+              scolded unable to many line may their times, propitiously is
+              themselves, was discipline the be the seen escape.
+            </p>
+          </div>
+        </div>
+        <div class="boxouters">
+          <div class="makingflexicons">
+            <h3>What is included in your digital marketing services?</h3>
+            <h5 class="makingpluscursor">➕</h5>
+          </div>
+          <div class="answer">
+            <p>
+              Best the average blind and that accordingly pointing, out the to
+              bold, good my believed the rattling experiments friends couldn't
+              scolded unable to many line may their times, propitiously is
+              themselves, was discipline the be the seen escape.
+            </p>
+          </div>
+        </div>
+        <div class="boxouters">
+          <div class="makingflexicons">
+            <h3>Can you create content for our social media accounts?</h3>
+            <h5 class="makingpluscursor">➕</h5>
+          </div>
+          <div class="answer">
+            <p>
+              Best the average blind and that accordingly pointing, out the to
+              bold, good my believed the rattling experiments friends couldn't
+              scolded unable to many line may their times, propitiously is
+              themselves, was discipline the be the seen escape.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 
   <script>
@@ -917,6 +998,33 @@
       logos.forEach((logo) => {
         const clone = logo.cloneNode(true);
         logosWrapper.appendChild(clone);
+      });
+    });
+
+    // toggle div para
+
+    document.querySelectorAll(".makingpluscursor").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        // Close all other open answers
+        document.querySelectorAll(".answer").forEach((answer) => {
+          if (answer !== this.parentElement.nextElementSibling) {
+            answer.classList.remove("show");
+            answer.previousElementSibling.querySelector("h5").textContent =
+              "➕";
+          }
+        });
+
+        // Toggle the clicked answer
+        const answer = this.parentElement.nextElementSibling;
+        const isOpen = answer.classList.contains("show");
+
+        if (isOpen) {
+          answer.classList.remove("show");
+          this.textContent = "➕";
+        } else {
+          answer.classList.add("show");
+          this.textContent = "➖";
+        }
       });
     });
   </script>
