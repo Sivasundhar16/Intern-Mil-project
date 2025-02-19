@@ -901,6 +901,7 @@ body {
   font-weight: bold;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
     transform 0.3s ease-in-out;
+  margin-left: 30px;
 }
 
 .finalcontactusbutton:hover {
@@ -911,4 +912,8 @@ body {
 
 .image-overlay h1 {
   font-size: 40px;
+}
+
+.nowrap {
+  margin-left: -100px;
 }
