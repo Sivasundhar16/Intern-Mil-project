@@ -562,9 +562,22 @@ body {
 
 .chooseusheading {
   font-size: 50px;
-  font-weight: 400;
-  margin-left: 55px;
-  margin-top: 50px;
+  font-weight: 600;
+  margin-left: 100px;
+  margin-top: 100px;
+  opacity: 0;
+  animation: chooseheadinganimation 1s ease-in forwards;
+}
+
+@keyframes chooseheadinganimation {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .outerchooseus {
@@ -593,9 +606,21 @@ body {
   border: 1px solid #e2e2e2;
   border-radius: 20px;
   background-color: white;
-  /* Modify sticky behavior */
-  position: relative; /* Change to relative by default */
-  margin-bottom: 40px; /* Reduce margin to allow content to flow */
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: seperatechooseusdivanimation 1s ease-in 500ms forwards;
+}
+
+@keyframes seperatechooseusdivanimation {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Add intersection observer trigger points */
@@ -638,6 +663,7 @@ body {
 .clientloveheading h1 {
   margin-left: 30px;
 }
+
 /* client love/////////////////////// */
 
 .clientloveheading h1 {
@@ -701,6 +727,19 @@ body {
   font-weight: 500;
   width: 700px;
   margin-left: 100px;
+  opacity: 0;
+  animation: clientloveusheadinganimation 1s ease-in forwards;
+}
+
+@keyframes clientloveusheadinganimation {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .thisisloveuspara {
@@ -723,6 +762,19 @@ body {
   overflow-x: auto; /* Allow horizontal scrolling */
   scrollbar-width: none; /* Firefox hides scrollbar */
   -ms-overflow-style: none; /* Internet Explorer / Edge hides scrollbar */
+  opacity: 0;
+  animation: clientloveusanimation 1s ease-in 500ms forwards;
+}
+
+@keyframes clientloveusanimation {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .makeclientloveusscroall::-webkit-scrollbar {
@@ -739,8 +791,9 @@ body {
 .container {
   width: 100%;
   overflow: hidden;
-  /* background-color: #f0f4f8; */
   padding: 20px 0;
+  opacity: 0;
+  animation: movinglogoanimation 1s ease-in forwards;
 }
 
 .logos-wrapper {
@@ -748,6 +801,17 @@ body {
   white-space: nowrap;
   will-change: transform;
   animation: scroll 10s linear infinite;
+}
+
+@keyframes movinglogoanimation {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .logo {
@@ -776,6 +840,19 @@ body {
   word-break: break-word; /* Ensures wrapping */
   font-size: 60px;
   margin-top: 20px;
+  opacity: 0;
+  animation: pricinganimationheading 1s forwards;
+}
+
+@keyframes pricinganimationheading {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .pricingouterflex {
@@ -836,6 +913,19 @@ body {
   gap: 20px;
   margin-top: 20px;
   margin-bottom: 100px;
+  opacity: 0;
+  animation: pricingareaanimation 1s forwards 500ms;
+}
+
+@keyframes pricingareaanimation {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .topdivprice h3 {
@@ -881,6 +971,19 @@ body {
   border: 1px solid #e2e2e2;
   border-radius: 20px;
   margin-bottom: 150px;
+  opacity: 0;
+  animation: uniquesoluctionanimation 1s forwards;
+}
+
+@keyframes uniquesoluctionanimation {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .uniquesoluctionblock {
