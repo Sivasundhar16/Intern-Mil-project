@@ -959,21 +959,6 @@ body {
   border-radius: 20px;
 }
 
-/* .imagetesting img:nth-child(2) {
-  width: 21px;
-  height: 21px;
-}
-
-.imagetesting img:nth-child(3) {
-  width: 30px;
-  height: 30px;
-}
-
-.imagetesting img:nth-child(4) {
-  width: 10px;
-  height: 10px;
-} */
-
 .imagetesting img[alt="facebook"] {
   width: 40px;
   height: 40px;
