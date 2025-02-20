@@ -69,31 +69,31 @@ body {
 .leftside h1 {
   font-size: 80px;
   margin-left: 30px;
-  animation-name: headingup;
-  animation-duration: 1.5s;
+  /* animation-name: headingup;
+  animation-duration: 1.5s; */
 }
 
-@keyframes headingup {
+/* @keyframes headingup {
   from {
     transform: translateY(60px);
   }
-}
+} */
 
 .leftside p {
   margin-left: 30px;
   margin-top: 150px;
   margin-right: 60px;
   font-size: 20px;
-  animation: paraheadingup;
-  animation-duration: 1.5s;
+  /* animation: paraheadingup;
+  animation-duration: 1.5s; */
 }
 
-@keyframes paraheadingup {
+/* @keyframes paraheadingup {
   from {
     transform: translateY(60px);
     animation-delay: 2ms;
   }
-}
+} */
 
 .leftside button {
   padding: 15px;
@@ -105,14 +105,14 @@ body {
   margin-left: 27px;
   cursor: pointer;
   transition: background-color 0.3s;
-  opacity: 0;
+  opacity: 1;
 
-  animation: headingbuttonup 2s linear 1s forwards;
+  /* animation: headingbuttonup 2s linear 1s forwards; */
   /* animation-timeline: view(); */
   /* animation-range: entry 0% cover 50%; screen nadula varapa activa panna*/
 }
 
-@keyframes headingbuttonup {
+/* @keyframes headingbuttonup {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -121,7 +121,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .leftside button:hover {
   background-color: #333;
@@ -168,14 +168,12 @@ body {
 
 .leftaboutus h1 {
   font-size: 70px;
-  opacity: 0;
+  opacity: 1;
   margin-left: 50px;
-  animation: leftaboutusanimation 2s linear forwards;
-  /* animation-timeline: view();
-  animation-range: entry 0% cover 50%; */
+  /* animation: leftaboutusanimation 2s linear forwards; */
 }
 
-@keyframes leftaboutusanimation {
+/* @keyframes leftaboutusanimation {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -184,7 +182,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .rightaboutus {
   width: 50%;
@@ -193,23 +191,23 @@ body {
 
 .rightaboutus h1 {
   font-size: 35px;
-  opacity: 0;
-  animation: rightsideaboutusanimation 2s linear forwards;
+  opacity: 1;
+  /* animation: rightsideaboutusanimation 2s linear forwards; */
 }
 
 .rightaboutus h3 {
-  opacity: 0;
-  animation: rightsideaboutusanimation 2s linear forwards;
+  opacity: 1;
+  /* animation: rightsideaboutusanimation 2s linear forwards; */
 }
 
 .rightaboutus p {
   color: #212727c0;
   font-size: 20px;
-  opacity: 0;
-  animation: rightsideaboutusanimation 2s linear forwards;
+  opacity: 1;
+  /* animation: rightsideaboutusanimation 2s linear forwards; */
 }
 
-@keyframes rightsideaboutusanimation {
+/* @keyframes rightsideaboutusanimation {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -218,7 +216,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .rightnumber {
   display: flex;
@@ -344,11 +342,11 @@ body {
   z-index: 10;
   background-color: white;
   padding-right: 20px;
-  opacity: 0;
-  animation: serviceproviderheading 1s ease-in forwards;
+  opacity: 1;
+  /* animation: serviceproviderheading 1s ease-in forwards; */
 }
 
-@keyframes serviceproviderheading {
+/* @keyframes serviceproviderheading {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -357,7 +355,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 /* Outer container for the service cards */
 .outerserviceprovide {
@@ -382,11 +380,11 @@ body {
   flex: 0 0 auto; /* Prevent flex items from shrinking */
   width: 400px; /* Set a fixed width for each innerdiv */
   scroll-snap-align: start; /* Snap each innerdiv to the start of the container */
-  opacity: 0;
-  animation: innderdivanimation 1s ease-in 500ms forwards;
+  opacity: 1;
+  /* animation: innderdivanimation 1s ease-in 500ms forwards; */
 }
 
-@keyframes innderdivanimation {
+/* @keyframes innderdivanimation {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -395,7 +393,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 /* Hover effect for service cards */
 .innerdiv:hover {
@@ -481,11 +479,11 @@ body {
 /* Heading styles */
 .firstheading {
   font-size: 60px;
-  opacity: 0;
-  animation: showcaseofexcellence 1s ease-in forwards;
+  opacity: 1;
+  /* animation: showcaseofexcellence 1s ease-in forwards; */
 }
 
-@keyframes showcaseofexcellence {
+/* @keyframes showcaseofexcellence {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -494,7 +492,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 /* Container that holds the images */
 .makeshowcaseimageflex {
@@ -516,11 +514,11 @@ body {
   position: relative;
   display: inline-block;
   flex: 0 0 auto; /* Prevents images from shrinking */
-  opacity: 0;
-  animation: showcaseimagedivanimation 1s ease-in 500ms forwards;
+  opacity: 1;
+  /* animation: showcaseimagedivanimation 1s ease-in 500ms forwards; */
 }
 
-@keyframes showcaseimagedivanimation {
+/* @keyframes showcaseimagedivanimation {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -529,7 +527,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 /* Image styling */
 .showcaseimgdiv img {
@@ -565,11 +563,11 @@ body {
   font-weight: 600;
   margin-left: 100px;
   margin-top: 100px;
-  opacity: 0;
-  animation: chooseheadinganimation 1s ease-in forwards;
+  opacity: 1;
+  /* animation: chooseheadinganimation 1s ease-in forwards; */
 }
 
-@keyframes chooseheadinganimation {
+/* @keyframes chooseheadinganimation {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -578,7 +576,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .outerchooseus {
   display: flex;
@@ -608,11 +606,11 @@ body {
   background-color: white;
   position: relative;
   margin-bottom: 40px;
-  opacity: 0;
-  animation: seperatechooseusdivanimation 1s ease-in 500ms forwards;
+  opacity: 1;
+  /* animation: seperatechooseusdivanimation 1s ease-in 500ms forwards; */
 }
 
-@keyframes seperatechooseusdivanimation {
+/* @keyframes seperatechooseusdivanimation {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -621,7 +619,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 /* Add intersection observer trigger points */
 .seperaterchoose.sticky {
@@ -727,11 +725,11 @@ body {
   font-weight: 500;
   width: 700px;
   margin-left: 100px;
-  opacity: 0;
-  animation: clientloveusheadinganimation 1s ease-in forwards;
+  opacity: 1;
+  /* animation: clientloveusheadinganimation 1s ease-in forwards; */
 }
 
-@keyframes clientloveusheadinganimation {
+/* @keyframes clientloveusheadinganimation {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -740,7 +738,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .thisisloveuspara {
   width: 540px;
@@ -762,11 +760,11 @@ body {
   overflow-x: auto; /* Allow horizontal scrolling */
   scrollbar-width: none; /* Firefox hides scrollbar */
   -ms-overflow-style: none; /* Internet Explorer / Edge hides scrollbar */
-  opacity: 0;
-  animation: clientloveusanimation 1s ease-in 500ms forwards;
+  opacity: 1;
+  /* animation: clientloveusanimation 1s ease-in 500ms forwards; */
 }
 
-@keyframes clientloveusanimation {
+/* @keyframes clientloveusanimation {
   from {
     transform: translateY(60px);
     opacity: 0;
@@ -775,7 +773,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .makeclientloveusscroall::-webkit-scrollbar {
   display: none; /* Chrome/Safari hides scrollbar */
@@ -840,10 +838,10 @@ body {
   word-break: break-word; /* Ensures wrapping */
   font-size: 60px;
   margin-top: 20px;
-  opacity: 0;
-  animation: pricinganimationheading 1s forwards;
+  opacity: 1;
+  /* animation: pricinganimationheading 1s forwards; */
 }
-
+/* 
 @keyframes pricinganimationheading {
   from {
     transform: translateY(50px);
@@ -853,7 +851,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .pricingouterflex {
   display: flex;
@@ -913,11 +911,11 @@ body {
   gap: 20px;
   margin-top: 20px;
   margin-bottom: 100px;
-  opacity: 0;
-  animation: pricingareaanimation 1s forwards 500ms;
+  opacity: 1;
+  /* animation: pricingareaanimation 1s forwards 500ms; */
 }
 
-@keyframes pricingareaanimation {
+/* @keyframes pricingareaanimation {
   from {
     transform: translateY(50px);
     opacity: 0;
@@ -926,7 +924,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .topdivprice h3 {
   margin-left: 40px;
@@ -971,11 +969,11 @@ body {
   border: 1px solid #e2e2e2;
   border-radius: 20px;
   margin-bottom: 150px;
-  opacity: 0;
-  animation: uniquesoluctionanimation 1s forwards;
+  opacity: 1;
+  /* animation: uniquesoluctionanimation 1s forwards; */
 }
 
-@keyframes uniquesoluctionanimation {
+/* @keyframes uniquesoluctionanimation {
   from {
     transform: translateY(50px);
     opacity: 0;
@@ -984,7 +982,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .uniquesoluctionblock {
   display: flex;
@@ -1034,11 +1032,11 @@ body {
 /* Left section */
 .leftsidefrequently {
   width: 360px;
-  opacity: 0;
-  animation: leftfrequentlyanimation 1s forwards;
+  opacity: 1;
+  /* animation: leftfrequentlyanimation 1s forwards; */
 }
 
-@keyframes leftfrequentlyanimation {
+/* @keyframes leftfrequentlyanimation {
   from {
     transform: translateY(50px);
     opacity: 0;
@@ -1047,7 +1045,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .leftsidefrequently h1 {
   font-size: 40px;
@@ -1067,11 +1065,11 @@ body {
   border-radius: 10px;
   padding: 15px;
   transition: all 0.3s ease-in-out;
-  opacity: 0;
-  animation: boxoutersanimation 1s forwards 500ms;
+  opacity: 1;
+  /* animation: boxoutersanimation 1s forwards 500ms; */
 }
 
-@keyframes boxoutersanimation {
+/* @keyframes boxoutersanimation {
   from {
     transform: translateY(50px);
     opacity: 0;
@@ -1080,7 +1078,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 /* Question + Icon */
 .makingflexicons {
@@ -1168,11 +1166,11 @@ body {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
     transform 0.3s ease-in-out;
   margin-left: 30px;
-  opacity: 0;
-  animation: lastimagebuttonanimatin 1s forwards 500ms;
+  opacity: 1;
+  /* animation: lastimagebuttonanimatin 1s forwards 500ms; */
 }
 
-@keyframes lastimagebuttonanimatin {
+/* @keyframes lastimagebuttonanimatin {
   from {
     transform: translateY(50px);
     opacity: 0;
@@ -1181,7 +1179,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .finalcontactusbutton:hover {
   background-color: black;
@@ -1191,11 +1189,11 @@ body {
 
 .image-overlay h1 {
   font-size: 40px;
-  opacity: 0;
-  animation: lastimageanimation 1s forwards;
+  opacity: 1;
+  /* animation: lastimageanimation 1s forwards; */
 }
 
-@keyframes lastimageanimation {
+/* @keyframes lastimageanimation {
   from {
     transform: translateY(50px);
     opacity: 0;
@@ -1204,7 +1202,7 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 .nowrap {
   margin-left: -100px;
