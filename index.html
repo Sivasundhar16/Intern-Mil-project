@@ -81,15 +81,15 @@
         </p>
         <div class="rightnumber">
           <div data-aos="fade-up" data-aos-duration="2000">
-            <h1>580+</h1>
+            <h1 data-target="580">0</h1>
             <h3 class="makingcolor">Satisfied Clients</h3>
           </div>
           <div data-aos="fade-up" data-aos-duration="2000">
-            <h1>730+</h1>
+            <h1 data-target="730">0</h1>
             <h3 class="makingcolor">Projects done</h3>
           </div>
           <div data-aos="fade-up" data-aos-duration="2000">
-            <h1>550+M</h1>
+            <h1 data-target="550">0</h1>
             <h3 class="makingcolor">Total Revenue</h3>
           </div>
         </div>
@@ -1160,6 +1160,30 @@
         }
       });
     });
+
+    //target number
+
+    function animateNumbers() {
+      const h1Elements = document.querySelectorAll(".rightnumber h1");
+
+      h1Elements.forEach((h1) => {
+        let target = parseInt(h1.getAttribute("data-target"));
+        let start = target + Math.floor(Math.random() * 200) + 100; // Start from a higher number
+        let current = start;
+
+        const interval = setInterval(() => {
+          if (current <= target) {
+            h1.textContent = target + "+";
+            clearInterval(interval);
+          } else {
+            h1.textContent = current + "+";
+            current -= Math.ceil((current - target) / 10); // Faster decrement
+          }
+        }, 50); // Speed increased (lower value = faster)
+      });
+    }
+
+    window.onload = animateNumbers;
   </script>
   <script>
     AOS.init();
