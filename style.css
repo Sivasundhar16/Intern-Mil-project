@@ -35,6 +35,22 @@ body {
 
 .rightside {
   position: relative;
+  opacity: 0;
+  animation: headingimage;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes headingimage {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .rightside img {
@@ -53,13 +69,30 @@ body {
 .leftside h1 {
   font-size: 80px;
   margin-left: 30px;
+  animation-name: headingup;
+  animation-duration: 1.5s;
+}
+
+@keyframes headingup {
+  from {
+    transform: translateY(60px);
+  }
 }
 
 .leftside p {
   margin-left: 30px;
-  margin-top: 200px;
+  margin-top: 150px;
   margin-right: 60px;
   font-size: 20px;
+  animation: paraheadingup;
+  animation-duration: 1.5s;
+}
+
+@keyframes paraheadingup {
+  from {
+    transform: translateY(60px);
+    animation-delay: 2ms;
+  }
 }
 
 .leftside button {
@@ -72,6 +105,22 @@ body {
   margin-left: 27px;
   cursor: pointer;
   transition: background-color 0.3s;
+
+  /* Fixed Animation Properties */
+  animation: headingbuttonup 5s linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 50%;
+}
+
+@keyframes headingbuttonup {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .leftside button:hover {
