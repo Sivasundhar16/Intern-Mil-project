@@ -105,11 +105,11 @@ body {
   margin-left: 27px;
   cursor: pointer;
   transition: background-color 0.3s;
+  opacity: 0;
 
-  /* Fixed Animation Properties */
-  animation: headingbuttonup 5s linear forwards;
-  animation-timeline: view();
-  animation-range: entry 20% cover 50%; /* screen nadula varapa activa panna*/
+  animation: headingbuttonup 2s linear 1s forwards;
+  /* animation-timeline: view(); */
+  /* animation-range: entry 0% cover 50%; screen nadula varapa activa panna*/
 }
 
 @keyframes headingbuttonup {
@@ -171,8 +171,8 @@ body {
   opacity: 0;
   margin-left: 50px;
   animation: leftaboutusanimation 2s linear forwards;
-  /* animation-timeline: view(); */
-  animation-range: entry 10% cover 10%;
+  /* animation-timeline: view();
+  animation-range: entry 0% cover 50%; */
 }
 
 @keyframes leftaboutusanimation {
@@ -193,11 +193,31 @@ body {
 
 .rightaboutus h1 {
   font-size: 35px;
+  opacity: 0;
+  animation: rightsideaboutusanimation 2s linear forwards;
+}
+
+.rightaboutus h3 {
+  opacity: 0;
+  animation: rightsideaboutusanimation 2s linear forwards;
 }
 
 .rightaboutus p {
   color: #212727c0;
   font-size: 20px;
+  opacity: 0;
+  animation: rightsideaboutusanimation 2s linear forwards;
+}
+
+@keyframes rightsideaboutusanimation {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .rightnumber {
@@ -319,11 +339,24 @@ body {
 /* Heading style - fixed position */
 .headingservice {
   position: sticky; /* Keep the heading fixed */
-  left: 0; /* Stick to the left side */
-  top: 0; /* Stick to the top */
-  z-index: 10; /* Ensure it stays above the scrolling content */
-  background-color: white; /* Add background to avoid overlapping text */
-  padding-right: 20px; /* Add some padding for better spacing */
+  left: 0;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  padding-right: 20px;
+  opacity: 0;
+  animation: serviceproviderheading 1s ease-in forwards;
+}
+
+@keyframes serviceproviderheading {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Outer container for the service cards */
@@ -349,7 +382,21 @@ body {
   flex: 0 0 auto; /* Prevent flex items from shrinking */
   width: 400px; /* Set a fixed width for each innerdiv */
   scroll-snap-align: start; /* Snap each innerdiv to the start of the container */
+  opacity: 0;
+  animation: innderdivanimation 1s ease-in 500ms forwards;
 }
+
+@keyframes innderdivanimation {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* Hover effect for service cards */
 .innerdiv:hover {
   transform: scale(1.05); /* Slightly scale up on hover */
@@ -434,6 +481,19 @@ body {
 /* Heading styles */
 .firstheading {
   font-size: 60px;
+  opacity: 0;
+  animation: showcaseofexcellence 1s ease-in forwards;
+}
+
+@keyframes showcaseofexcellence {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Container that holds the images */
@@ -456,6 +516,19 @@ body {
   position: relative;
   display: inline-block;
   flex: 0 0 auto; /* Prevents images from shrinking */
+  opacity: 0;
+  animation: showcaseimagedivanimation 1s ease-in 500ms forwards;
+}
+
+@keyframes showcaseimagedivanimation {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Image styling */
